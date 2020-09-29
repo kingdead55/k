@@ -14,8 +14,9 @@ let allowCrossDomain = function(req, res, next) {
   next();
 }
 app.use(allowCrossDomain);
-app.use(express.static(__dirname+"/website"))
 
+app.use(express.static(__dirname+"/website"))
+app.use(express.static(__dirname+"/client_bypass"))
 
 function testregex(string, regex) {
   var reg = new RegExp(regex);
@@ -29,9 +30,7 @@ function change(url) {
   var done2 = "https://link-to.net"+done1
   return done2;
   }
-app.get('/', (req,res) => {
-  res.sendFile("index.html")
-})
+
 app.get('/api', (req, res) => {
     var url11 = decodeURI(req.url.substring(9));
 
@@ -367,6 +366,8 @@ if(!failed) {
       }
       
     })
+     } else if(testregex(url11, "/adshrink\.it/")) {
+      //client bypass needed
      } else {
 
 
