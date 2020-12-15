@@ -1,2 +1,4 @@
-# linkunshortnener
-Bypasses major trackers, and ad link shorteners...
+# AdflyBypasser
+Bypasses ALL adf.ly links
+
+For linkvertise and more bypasses check out: https://github.com/codergautam/linkunshortner
